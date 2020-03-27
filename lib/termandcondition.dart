@@ -48,7 +48,7 @@ class termandconditionstate extends State<termandcondition>{
                         alignment: AlignmentDirectional.center,
                         margin: EdgeInsets.only(top:12),
                         child: Text(
-                          'Notification',
+                          'Terms and Conditions',
                           style: TextStyle(color: Colors.black87, fontSize: 23,fontWeight: FontWeight.w500),
                         ),
                       ),
@@ -127,7 +127,88 @@ class termandconditionstate extends State<termandcondition>{
                             style: TextStyle(color: Colors.black54, fontSize: 15.5),
                           ),
                         ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          margin: EdgeInsets.only(top:13),
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            'Restrictions',
+                            style: TextStyle(color: Colors.black, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          margin: EdgeInsets.only(top:3),
+                          alignment: AlignmentDirectional.center,
+                          child: Text(
+                            'You are specifically restricted from all of the following:',
+                            style: TextStyle(color: Colors.black54, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          margin: EdgeInsets.only(top:13),
+                          alignment: AlignmentDirectional.center,
+                          child: Text(
+                            'publishing any website material in any other media;',
+                            style: TextStyle(color: Colors.black54, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          alignment: AlignmentDirectional.center,
+                          child: Text(
+                            'selling, sublicensing and/or otherwise commercializing any Website material;publicly performing and/or this showing any Website material; using this Website contrary to applicable laws and regulations, or in any way may cause harm to the Website, or to any person or business entity; engaging in any data mining, data harvesting, data extracting or any other similar activity in relation to this Website;',
+                            style: TextStyle(color: Colors.black54, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
 
+                          alignment: AlignmentDirectional.center,
+                          child: Text(
+                            'using this WEbsite to engage in any advertising or marketing. Certain areas of this Website are restricted from being accesse by you and Company Name may further restrict access by you to any time, in absolute discretion. Any user ID and password you may have for this Website are confidential and you must maintain confidentiality as well.',
+                            style: TextStyle(color: Colors.black54, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          margin: EdgeInsets.only(top:13),
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            'Entire Agreement',
+                            style: TextStyle(color: Colors.black, fontSize: 15.5),
+                          ),
+                        ),
+                        Container(
+                          width: getWidthByPercentage(80, context),
+                          margin: EdgeInsets.only(top:3),
+                          alignment: AlignmentDirectional.center,
+                          child: Text(
+                            'These Terms constitude the entire agreement between Company Name and you in relation to your use of this Website, and supersede all prior agreements and understandings.',
+                            style: TextStyle(color: Colors.black54, fontSize: 15.5),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: Container(
+                            width: getWidthByPercentage(80, context),
+                            margin: EdgeInsets.only(top:19, bottom: 43),
+                            height: 45,
+                            decoration: BoxDecoration(
+                                color:  Colors.amber,
+                                border: Border.all(color: Colors.amber, width: 1.1),
+                                borderRadius: BorderRadius.all(Radius.circular(9))
+                            ),
+                            alignment: AlignmentDirectional.center,
+                            child: Text(
+                              'Accept and Continue',
+                              style: TextStyle(color: Colors.black, fontSize: 16.5),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
