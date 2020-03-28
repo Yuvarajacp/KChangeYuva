@@ -118,7 +118,7 @@ class _OtpScreenState extends State<OtpScreen>{
                         ),
                         InkWell(
                           onTap: (){
-                            Navigator.pushNamed(context, '/Login');
+                            Navigator.pushNamed(context, '/HomeScreen');
                           },
                           child: Container(
                             width: getWidthByPercentage(80, context),
