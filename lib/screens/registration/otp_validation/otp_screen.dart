@@ -1,24 +1,18 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kchange/termandcondition.dart';
+import 'package:kchange/util/screen_util.dart';
 
-import 'helpers.dart';
-import 'homescreen.dart';
-
-
-class otpscreen extends StatefulWidget{
+class OtpScreen extends StatefulWidget{
   @override
-  otpscreenstate createState() => otpscreenstate();
+  _OtpScreenState createState() => _OtpScreenState();
 }
 
-class otpscreenstate extends State<otpscreen>{
+class _OtpScreenState extends State<OtpScreen>{
   bool hasPasswordVisible = true;
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Material(
       child: Scaffold(
         appBar: null,
@@ -100,10 +94,11 @@ class otpscreenstate extends State<otpscreen>{
                                   new TextSpan(
                                     text: 'OTP ',
                                     style: TextStyle(color: Colors.black, fontSize: 13,fontWeight: FontWeight.w500),
-                                    recognizer: new TapGestureRecognizer()..onTap = () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => termandcondition()),
-                                    ),
+                                    recognizer: new TapGestureRecognizer()..onTap = () {
+
+                                      Navigator.pushNamed(context, '/TermsAndConditions');
+
+                                    } ,
                                   ),
                                   new TextSpan(
                                     text: 'with in a few minutes please tap on "Resend OTP" to request for a new code',
@@ -123,11 +118,7 @@ class otpscreenstate extends State<otpscreen>{
                         ),
                         InkWell(
                           onTap: (){
-
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => homescreen()),
-                            );
+                            Navigator.pushNamed(context, '/Login');
                           },
                           child: Container(
                             width: getWidthByPercentage(80, context),

@@ -1,24 +1,20 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kchange/registrationscreen.dart';
-import 'package:kchange/termandcondition.dart';
+import 'package:kchange/util/screen_util.dart';
 
-import 'helpers.dart';
-import 'homescreen.dart';
-
-
-class loginscreen extends StatefulWidget{
+class LoginScreen extends StatefulWidget{
   @override
-  loginscreenstate createState() => loginscreenstate();
+  State<StatefulWidget> createState() {
+    return _LoginScreenState();
+  }
+
 }
 
-class loginscreenstate extends State<loginscreen>{
+class _LoginScreenState extends State<LoginScreen>{
   bool hasPasswordVisible = true;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Material(
       child: Stack(
         children: <Widget>[
@@ -91,10 +87,10 @@ class loginscreenstate extends State<loginscreen>{
 
                   InkWell(
                     onTap: (){
-                      Navigator.push(
+                      /*Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => homescreen()),
-                      );
+                      );*/
                     },
                     child: Container(
                       width: getWidthByPercentage(80, context),
@@ -129,10 +125,9 @@ class loginscreenstate extends State<loginscreen>{
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => registrationscreen()),
-                      );
+
+                      Navigator.pushNamed(context, '/Registration');
+
                     },
                     child: Container(
                       width: getWidthByPercentage(80, context),

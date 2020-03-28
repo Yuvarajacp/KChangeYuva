@@ -1,29 +1,18 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:kchange/util/screen_util.dart';
 
-import 'helpers.dart';
-
-
-class termandcondition extends StatefulWidget{
+class TermsAndConditions extends StatefulWidget{
   @override
-  termandconditionstate createState() => termandconditionstate();
+  _TermsAndConditionsState createState() => _TermsAndConditionsState();
 }
 
-class termandconditionstate extends State<termandcondition>{
-  bool hasPasswordVisible = true;
-
-
+class _TermsAndConditionsState extends State<TermsAndConditions>{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Material(
       child: Scaffold(
-        appBar: null,
         body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: Container(
             height: MediaQuery.of(context).size.height,
             child: Stack(
@@ -213,8 +202,6 @@ class termandconditionstate extends State<termandcondition>{
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),

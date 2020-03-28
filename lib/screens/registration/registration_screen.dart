@@ -1,27 +1,22 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kchange/termandcondition.dart';
+import 'package:kchange/util/screen_util.dart';
 
-import 'helpers.dart';
-import 'loginscreen.dart';
-import 'otpscreen.dart';
-
-
-class registrationscreen extends StatefulWidget{
+class RegistrationScreen extends StatefulWidget{
   @override
-  registrationscreenstate createState() => registrationscreenstate();
+  State<StatefulWidget> createState() {
+    return _RegistrationScreenState();
+  }
+
 }
 
-class registrationscreenstate extends State<registrationscreen>{
+class _RegistrationScreenState extends State<RegistrationScreen>{
   bool hasPasswordVisible = true;
-
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Material(
       child: Scaffold(
-        appBar: null,
         body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
@@ -119,7 +114,7 @@ class registrationscreenstate extends State<registrationscreen>{
                               child:TextFormField(
                                   textInputAction: TextInputAction.done,
                                   keyboardType: TextInputType.phone,
-                                  inputFormatters: <TextInputFormatter>[
+                                  inputFormatters: [
                                     WhitelistingTextInputFormatter.digitsOnly
                                   ],
                                   obscureText: !hasPasswordVisible,
@@ -173,10 +168,9 @@ class registrationscreenstate extends State<registrationscreen>{
                                       new TextSpan(
                                         text: ' Terms & Conditions',
                                         style: TextStyle(color: Colors.black, fontSize: 13,fontWeight: FontWeight.w500),
-                                        recognizer: new TapGestureRecognizer()..onTap = () => Navigator.push(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => termandcondition()),
-                                        ),
+                                        recognizer: new TapGestureRecognizer()..onTap = () {
+                                          Navigator.pushNamed(context, '/TermsAndConditions');
+                                        },
                                       ),
                                       new TextSpan(
                                         text: ' and our default Notification Settings.',
@@ -190,10 +184,7 @@ class registrationscreenstate extends State<registrationscreen>{
 
                         InkWell(
                           onTap: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => otpscreen()),
-                            );
+                            Navigator.pushNamed(context, '/OtpValidation');
                           },
                           child: Container(
                             width: getWidthByPercentage(80, context),
